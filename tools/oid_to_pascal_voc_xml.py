@@ -19,7 +19,7 @@ from lxml import etree
 foldername = os.path.basename(os.getcwd())
 if foldername == "tools": os.chdir("..")
 
-Dataset_path = "OIDv4_ToolKit/OID/Dataset"
+Dataset_path = "OID/Dataset"
 
 def convert_to_xml():
     current_path = os.getcwd()

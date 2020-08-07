@@ -22,12 +22,19 @@ Darknet_weights = YOLO_DARKNET_WEIGHTS
 if TRAIN_YOLO_TINY:
     Darknet_weights = YOLO_DARKNET_TINY_WEIGHTS
 
-image_path   = "./IMAGES/plate_2.jpg"
+#image_path   = "./IMAGES/boat.jpg"
+image_path   = "./IMAGES/group.jpg"
+#image_path   = "./IMAGES/plate_2.jpg"
 video_path   = "./IMAGES/city.mp4"
 
 yolo = Create_Yolov3(input_size=input_size, CLASSES=TRAIN_CLASSES)
-yolo.load_weights("./checkpoints/yolov3_custom") # use keras weights
+yolo.load_weights("./checkpoints/yolov3_custom_Tiny") # use keras weights
+#yolo.load_weights("./checkpoints/yolov3_custom") # use keras weights
 
-detect_image(yolo, image_path, "./IMAGES/plate_1_detect.jpg", input_size=input_size, show=True, CLASSES=TRAIN_CLASSES, rectangle_colors=(255,0,0))
+#detect_image(yolo, image_path, "./IMAGES/boat_detect.jpg", input_size=input_size, show=True, CLASSES=TRAIN_CLASSES, rectangle_colors=(255,0,0))
+detect_image(yolo, image_path, "./IMAGES/group_detect.jpg", input_size=input_size, show=True, CLASSES=TRAIN_CLASSES, rectangle_colors=(255,0,0))
+
+
+#detect_image(yolo, image_path, "./IMAGES/plate_1_detect.jpg", input_size=input_size, show=True, CLASSES=TRAIN_CLASSES, rectangle_colors=(255,0,0))
 #detect_video(yolo, video_path, './IMAGES/detected.mp4', input_size=input_size, show=False, CLASSES=TRAIN_CLASSES, rectangle_colors=(255,0,0))
 #detect_realtime(yolo, '', input_size=input_size, show=True, CLASSES=TRAIN_CLASSES, rectangle_colors=(255, 0, 0))

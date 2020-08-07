@@ -16,16 +16,25 @@ foldername = os.path.basename(os.getcwd())
 if foldername == "tools": os.chdir("..")
 
 
-data_dir = '/custom_dataset/'
-Dataset_names_path = "model_data/license_plate_names.txt"
-Dataset_train = "model_data/license_plate_train.txt"
-Dataset_test = "model_data/license_plate_test.txt"
-is_subfolder = False
+data_dir = '/OID/Dataset/'
+Dataset_names_path = "model_data/forG_SB_classes.txt"
+Dataset_train = "model_data/forG_SB_train.txt"
+Dataset_test = "model_data/forG_SB_test.txt"
+is_subfolder = True
+
+#data_dir = '/custom_dataset/'
+#Dataset_names_path = "model_data/license_plate_names.txt"
+#Dataset_train = "model_data/license_plate_train.txt"
+#Dataset_test = "model_data/license_plate_test.txt"
+#is_subfolder = False
+
 
 Dataset_names = []
       
 def ParseXML(img_folder, file):
+    print(img_folder)
     for xml_file in glob.glob(img_folder+'/*.xml'):
+        print(xml_file)
         tree=ET.parse(open(xml_file))
         root = tree.getroot()
         image_name = root.find('filename').text
