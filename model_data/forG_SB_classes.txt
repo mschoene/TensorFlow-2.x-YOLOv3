@@ -1,0 +1,8 @@
+Beer
+Boat
+Sunglasses
+Person
+Human_face
+Food
+Musical_instrument
+Human_hand
